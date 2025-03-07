@@ -1,0 +1,5 @@
+{   
+    "workbench.sideBar.location": "left",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
