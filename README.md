@@ -1,4 +1,6 @@
 # AuConnect
+![logo](AuConnectLogo.png)
+
 
 ## Table of Contents
 
@@ -133,16 +135,16 @@ npm run dev
 ## Screenshots
 
 ### **Home Page**
-![Home Page](screenshots/home.png)
+![Home Page](feed.png)
 
 ### **Profile Page**
-![Profile Page](screenshots/profile.png)
+![Profile Page](profile.png)
 
 ### **Edit Profile Page**
-![Edit Profile Page](screenshots/edit_profile.png)
+![Edit Profile Page](editprofile.png)
 
-### **Feed Page**
-![Feed Page](screenshots/feed.png)
+### **Login Page**
+![login Page](login.png)
 
 ---
 
