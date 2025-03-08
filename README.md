@@ -1,6 +1,5 @@
 # AuConnect
-![logo](AuConnectLogo.png)
-
+<img src="AuConnectLogo.PNG" alt="AuConnect Logo" width="200"/>
 
 ## Table of Contents
 
