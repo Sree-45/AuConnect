@@ -42,7 +42,6 @@
 
 ### **Other**
 - Maven
-- Docker
 
 ---
 
