@@ -1,4 +1,4 @@
-# AuConnect
+# AuConnect.
 <img src="AuConnectLogo.PNG" alt="AuConnect Logo" width="200"/>
 
 ## Table of Contents
@@ -22,6 +22,7 @@
 - **Messaging Between Users**: Send and receive messages within the platform.
 - **User Connections and Networking**: Connect and network with other users.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Email Validation**: Enabled OTP verification using GMAIL API
 
 ---
 
@@ -78,6 +79,8 @@ cd backend
 spring.datasource.url=jdbc:mysql://localhost:3306/auconnect
 spring.datasource.username=root
 spring.datasource.password=yourpassword
+spring.mail.username=yourEmail
+spring.mail.password=AppPassword(For Gmail)
 ```
 
 - **Email Domain Validation**
