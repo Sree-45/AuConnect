@@ -1,0 +1,29 @@
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  outline: none;
+  box-shadow: none;
+}
+
+.toggle-password:hover, 
+.toggle-password:focus {
+  color: #1E40AF;
+  outline: none;
+  box-shadow: none;
+}
+
+.password-input-container {
+  position: relative;
+  outline: none;
+  box-shadow: none;
+}

@@ -1,0 +1,401 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: black;
+}
+
+:root {
+  --primary-color: #1E40AF; /* Blue color - adjust to match your brand */
+  --primary-hover: #2563eb;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background-light: #f9fafb;
+  --border-color: #e5e7eb;
+  --form-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.5;
+  background-color: var(--background-light);
+}
+
+.registration-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: var(--form-shadow);
+}
+
+/* Logo section */
+.logo-section {
+  flex: 1;
+  background: #1E40AF;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-section::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background:#1E40AF;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+}
+
+.logo-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.brand-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-tagline {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Form section */
+.form-section {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.form-header {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.form-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.form-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Form elements */
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Modify the form-group to support floating labels */
+.form-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+/* Remove the old label styling */
+label {
+  display: none;
+}
+
+/* New floating label styling */
+.form-group .floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 0.875rem;
+  top: 0.6rem;
+  transition: all var(--transition-speed);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Remove default placeholder styling */
+input::placeholder {
+  color: transparent;
+}
+
+/* Base input styling */
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background: transparent;
+  color: var(--text-primary); /* Add this line to set text color */
+  transition: all 0.25s ease;
+}
+
+/* Floating label styling */
+.floating-label {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  transform-origin: 0 0;
+  background-color: transparent;
+  padding: 0 0.25rem;
+}
+
+/* Animation for focused or filled inputs */
+input:focus,
+input:not(:placeholder-shown) {
+  border-color: var(--primary-color);
+  padding-top: 1.1rem;
+  padding-bottom: 0.4rem;
+}
+
+input:focus ~ .floating-label,
+input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-1.4rem) scale(0.8);
+  color: var(--primary-color);
+  background-color: white;
+  font-weight: 500;
+}
+
+/* Focus state with box shadow */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  outline: none;
+}
+
+/* Error state styling */
+input.error {
+  border-color: var(--error-color);
+}
+
+input.error ~ .floating-label {
+  color: var(--error-color);
+}
+
+input.error:focus ~ .floating-label,
+input.error:not(:placeholder-shown) ~ .floating-label {
+  color: var(--error-color);
+}
+
+/* Error message styling */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.7rem;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.general-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+  padding: 0.6rem 0.875rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.success-message {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+  padding: 0.6rem 0.875rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.input-info {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+}
+
+/* Button styles */
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.accent-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.accent-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Password toggle button styling */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  outline: none !important;
+  box-shadow: none !important;
+  }
+
+.toggle-password:hover, 
+.toggle-password:focus,
+.toggle-password:active {
+  color: #1E40AF;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+/* Add these rules to eliminate any focus indicators */
+.toggle-password::-moz-focus-inner {
+  border: 0;
+}
+
+button.toggle-password:focus {
+  outline: 0 !important;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  .registration-container {
+    flex-direction: column;
+  }
+  
+  .logo-section {
+    padding: 2rem;
+    max-height: 30vh;
+  }
+  
+  .form-section {
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .brand-title {
+    font-size: 2rem;
+  }
+  
+  .brand-tagline {
+    font-size: 1rem;
+  }
+  
+}
