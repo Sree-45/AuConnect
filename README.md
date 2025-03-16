@@ -1,5 +1,5 @@
 # AuConnect.
-<img src="AuConnectLogo.PNG" alt="AuConnect Logo" width="200"/>
+<img src="AuConnectLogo.png" alt="AuConnect Logo" width="200"/>
 
 ## Table of Contents
 
